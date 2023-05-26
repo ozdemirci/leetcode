@@ -45,7 +45,7 @@ Only one valid answer exists.
 
     }
     public static int[] twoSum(int[] nums, int target) {
-        int[] result= {0,0};
+        int[] result=new int[2];
         for (int i = 0; i < nums.length; i++) {
             for (int j = 1; j < nums.length; j++) {
                 if(target==nums[i]+nums[j] && i!=j ){
