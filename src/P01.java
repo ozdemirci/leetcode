@@ -63,17 +63,15 @@ Only one valid answer exists.
     public static int[] twoSum02(int[] nums, int target) {
         Map<Integer, Integer> index = new HashMap<>();
         int[] ans=new int[2];
-        for (int i = 0; i < nums.length; i++) {
+    for (int i = 0; i < nums.length; i++) {
             int other = target - nums[i];
             if (!index.containsKey(other)) {
                 index.put(nums[i], i);
             } else {
-                ans[0]= index.get(other);
-                ans[1]=i;
-                break;
+    return new int[]{index.get(other),i};
             }
         }
-        return ans;
+        return new int[]{-1,-1};
     }
 
     public static int[] twoSum03(int[] nums, int target) {
