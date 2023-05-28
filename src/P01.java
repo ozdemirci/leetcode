@@ -43,15 +43,15 @@ Only one valid answer exists.
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
         int target = 9;
-        System.out.println("twoSum(nums) = " + Arrays.toString(twoSum(nums,target) ) );
+        System.out.println("twoSum(nums) = " + Arrays.toString(twoSum(nums, target)));
         // System.out.println("twoSum02(nums,target) = " + Arrays.toString(twoSum02(nums, target)));
     }
 
     public static int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
-        for (int i = 0; i < nums.length-1; i++) {
-            for (int j = i+1; j < nums.length; j++) {
-                if (target == nums[i] + nums[j] ) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (target == nums[i] + nums[j]) {
                     result[0] = i;
                     result[1] = j;
                     break;
@@ -60,16 +60,17 @@ Only one valid answer exists.
         }
         return result;
     }
+
     public static int[] twoSum02(int[] nums, int target) {
         Map<Integer, Integer> index = new HashMap<>();
-        int[] ans=new int[2];
-    for (int i = 0; i < nums.length; i++) {
+        int[] ans = new int[2];
+
+        for (int i = 0; i < nums.length; i++) {
             int other = target - nums[i];
             if (!index.containsKey(other)) {
                 index.put(nums[i], i);
-                }
-            else {
-            return new int[]{index.get(other),i};
+            } else {
+                return new int[]{index.get(other), i};
             }
         }
         throw new IllegalStateException("no found");
@@ -77,15 +78,15 @@ Only one valid answer exists.
 
     public static int[] twoSum03(int[] nums, int target) {
         Map<Integer, Integer> index = new HashMap<>();
-        int[] ans=new int[2];
+        int[] ans = new int[2];
         for (int i = 0; i < nums.length; i++) {
             int other = target - nums[i];
             if (!index.containsKey(other)) {
                 index.put(nums[i], i);
             } else {
-                ans[0]= index.get(other);
-                ans[1]=i;
-                 break;
+                ans[0] = index.get(other);
+                ans[1] = i;
+                break;
             }
         }
         return ans;
