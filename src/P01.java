@@ -67,11 +67,12 @@ Only one valid answer exists.
             int other = target - nums[i];
             if (!index.containsKey(other)) {
                 index.put(nums[i], i);
-                } else {
+                }
+            else {
             return new int[]{index.get(other),i};
             }
         }
-        return new int[]{-1,-1};
+        throw new IllegalStateException("no found");
     }
 
     public static int[] twoSum03(int[] nums, int target) {
