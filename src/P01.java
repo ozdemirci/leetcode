@@ -67,8 +67,8 @@ Only one valid answer exists.
             int other = target - nums[i];
             if (!index.containsKey(other)) {
                 index.put(nums[i], i);
-            } else {
-    return new int[]{index.get(other),i};
+                } else {
+            return new int[]{index.get(other),i};
             }
         }
         return new int[]{-1,-1};
