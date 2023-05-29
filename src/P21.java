@@ -1,23 +1,7 @@
- class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
 public class P21 {
     public static void main(String[] args) {
 
+        mergeTwoLists(new ListNode(), new ListNode());
     }
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
        ListNode temp =new ListNode(0);
@@ -32,7 +16,6 @@ public class P21 {
                l2=l2.next;
            }
            temp=temp.next;
-
        }
         if (l1!=null)
             temp.next=l1;
@@ -40,8 +23,6 @@ public class P21 {
             temp.next=l2;
 
         return head.next;
-
-
     }
 
     public static ListNode mergeTwoLists01(ListNode l1, ListNode l2) {
@@ -60,5 +41,20 @@ public class P21 {
 
     }
 }
+class ListNode {
+    int val;
+    ListNode next;
 
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
 

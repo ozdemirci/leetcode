@@ -1,3 +1,5 @@
+package Try;
+
 public class TestNodeForLinkedLists {
     public static void main(String[] args) {
         Node nodeA = new Node(6);

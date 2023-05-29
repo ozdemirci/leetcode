@@ -16,41 +16,61 @@ Output: []
 
 Constraints:
 The number of nodes in the tree is in the range [0, 100].
--100 <= Node.val <= 100
+-100 <= Try.Node.val <= 100
  */
 public class P226 {
     public static void main(String[] args) {
 
+        invertTree(new TreeNode());
     }
+
     public static TreeNode invertTree(TreeNode root) {
-        if(root==null) return root;
-        Long start =System.currentTimeMillis();
-        TreeNode temp= root.left;
-        root.left=root.right;
-        root.right=temp;
+        if (root == null) return root;
+
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
 
         invertTree(root.left);
         invertTree(root.right);
-        Long end =System.currentTimeMillis();
-        int result= (int) (end-start);
-        System.out.println(result);
+
         return root;
     }
+
+    public static TreeNode invertTree01(TreeNode root) {
+
+        if (root == null)
+            return root;
+
+        TreeNode left = invertTree01(root.left);
+        TreeNode right = invertTree01(root.right);
+
+        root.right = left;
+        root.left = right;
+
+        return root;
+    }
+
 }
 
-
 class TreeNode {
-     int val;
+    int val;
     TreeNode left;
-     TreeNode right;
-     TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-      }
-  }
+    TreeNode right;
+
+    TreeNode() {
+    }
+
+    TreeNode(int val) {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
 
 
 
